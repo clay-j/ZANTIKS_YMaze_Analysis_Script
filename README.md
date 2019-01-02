@@ -7,7 +7,7 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 
 1. Download and install R from  https://www.r-project.org/ 
 2. Download and install RStudio from https://www.rstudio.com/
-3. On this githib repository, go to the top of the page and click the green "Clone or download" button and then click "Download Zip"
+3. On this github repository, go to the top of the page and click the green "Clone or download" button and then click "Download Zip"
 
 ### Launch RStudio and install dependencies
 
@@ -24,6 +24,8 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 5. Inside RStudio click File > Open File 
 6. Navigate to the "ZANTIKS_YMaze_Analysis_Script-master" directory, select script.R and press Open
 7. Inside the script window in RStudio, change the path of input and output to the location of the "data" and "output" directories, which are found inside the main "ZANTIKS_YMaze_Analysis_Script-master" directory
-8. Run the script.
+8. Run the script
 9. Your analysed data will be located in the "output" directory inside the main "ZANTIKS_YMaze_Analysis_Script-master" directory
+
+**N.B. data must be in .csv format**
 
