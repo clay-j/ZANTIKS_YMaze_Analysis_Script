@@ -1,7 +1,9 @@
 # Zantiks Y-Maze Analysis Script
 This is an R script designed to batch analyse raw data files output by [Zantiks](https://zantiks.com/) behavioural research equipment Y-maze protocol using zebrafish (*Danio rerio*). Please read the instructions below before use. If you use this script to analyse data that goes on to be published please cite this work appropriately.
 
-![Y_zones.png](https://github.com/thejamesclay/ZANTIKS_YMaze_Analysis_Script/blob/master/Y_zones.png)
+<p align="center">
+<img src="https://github.com/thejamesclay/ZANTIKS_YMaze_Analysis_Script/blob/master/Y_zones.png">
+</p>
 
 ## Instructions
 
