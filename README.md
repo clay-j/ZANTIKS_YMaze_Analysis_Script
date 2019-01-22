@@ -7,7 +7,7 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 
 ## Instructions
 
-### Download and install the nessercery software
+### Download and install the necessary software
 
 1. Download and install R from  https://www.r-project.org/ 
 2. Download and install RStudio from https://www.rstudio.com/
