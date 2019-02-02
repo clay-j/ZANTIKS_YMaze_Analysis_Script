@@ -3,8 +3,8 @@
 # Set input and output to the correct paths in the "YMazeAnalysisScript" directory
 library(tidyverse)
 library(lubridate)
-input = "G:/My Drive/Zebrafish/YMazeAnalysisScript/data"
-output = "G:/My Drive/Zebrafish/YMazeAnalysisScript/output"
+input = "D:/Documents/Coding Projects/ZANTIKS_YMaze_Analysis_Script/data"
+output = "D:/Documents/Coding Projects/ZANTIKS_YMaze_Analysis_Script/output"
 
 # IMPORT DATA -------------------------------------------------------------
 setwd(input)
@@ -163,8 +163,8 @@ turn_wide <- turn_long %>% spread(turn, n)
 final_data <- tet_wide %>% 
   left_join(turn_wide, by = c("fish_id","bin")) %>% 
   mutate(total_turns = L + R,
-         reps = LLLL, RRRR,
-         alts = RLRL, LRLR,
+         reps = LLLL + RRRR,
+         alts = RLRL + LRLR,
          rel_reps = (reps*100)/total_turns,
          rel_alts = (alts*100)/total_turns,
          rel_R = (R*100)/total_turns,
