@@ -6,3 +6,4 @@ output/time_in_zone.csv
 tidy_data.csv
 time_in_zone.csv
 .Rhistory
+packrat/lib*/
