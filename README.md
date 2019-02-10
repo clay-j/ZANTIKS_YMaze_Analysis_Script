@@ -15,9 +15,9 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 
 ### Launch RStudio and install dependencies
 
-1. On your local machine, navigate to where "ZANTIKS_YMaze_Analysis_Script-master.zip" was downloaded and extract the contents.
+1. On your local machine, navigate to where `"ZANTIKS_YMaze_Analysis_Script-master.zip"` was downloaded and extract the contents.
 2. Launch RStudio.
-3. Inside RStudio, change the working directory to the the newly extracted "ZANTIKS_YMaze_Analysis_Script-master" directory by either typing `setwd("C:/Users/James/Downloads/ZANTIKS_YMaze_Analysis_Script-master.zip")` into the R console pane (replacing the path as appropriate) and pressing enter. If unsure, click `Session > Set Working Directory > To Source File Location`
+3. Inside RStudio, change the working directory to the the newly extracted "ZANTIKS_YMaze_Analysis_Script-master" directory by typing `setwd("C:/Users/James/Downloads/ZANTIKS_YMaze_Analysis_Script-master.zip")` into the R console pane (replacing the path as appropriate) and pressing enter. If unsure, click `Session > Set Working Directory > To Source File Location`
 4. Inside the R console window, type `packrat::restore()`. If an error message is presented, try installing Packrat by typing `install.packages("packrat")` into the R console window and press enter.
 
 ### Open and run the script
