@@ -36,5 +36,5 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 ### N.B.
 
 * Data must be in .csv format
-* Fish ID numbers can only contain numbers
+* Fish IDs can only contain numbers
 
