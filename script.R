@@ -3,8 +3,8 @@
 # Set input and output to the correct paths in the "YMazeAnalysisScript" directory
 library(tidyverse)
 library(lubridate)
-input = "D:/Documents/Coding Projects/ZANTIKS_YMaze_Analysis_Script/data"
-output = "D:/Documents/Coding Projects/ZANTIKS_YMaze_Analysis_Script/output"
+input = "~/Coding Projects/ZANTIKS_YMaze_Analysis_Script/data"
+output = "~/Coding Projects/ZANTIKS_YMaze_Analysis_Script/output"
 
 # IMPORT DATA -------------------------------------------------------------
 setwd(input)
@@ -19,6 +19,8 @@ df[[3]] <- #Convert data nested in "head" into a usable format
   map(~ spread(.x, X3, X4)) %>% 
   map(~ separate(.x,"Subject Identification", c("fish1", "fish2"))) %>% 
   map(~ select(.x, X1,X2, "Apparatus", "fish1","fish2", "Unit ID"))
+
+df[[2]] <- df[[2]] %>% map(~ mutate(.x, X4 = as.character(X4))) # ensure that "X4" is character because unnest() can't handle mixed data types in list
 
 df <- #convert df from a tibble w/ nested lists to a basic tibble
   df %>% 
