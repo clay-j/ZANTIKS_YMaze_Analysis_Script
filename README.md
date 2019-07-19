@@ -33,7 +33,7 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 7. Run the script.
 8. Your analysed data will be located in the `"output"` directory inside the main `"ZANTIKS_YMaze_Analysis_Script-master"` directory.
 
-**N.B.**
+### N.B.
 
 * Data must be in .csv format
 * Fish ID numbers can only contain numbers
