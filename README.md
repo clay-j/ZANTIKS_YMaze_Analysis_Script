@@ -1,5 +1,5 @@
 # Zantiks Y-Maze Analysis Script
-This is an R script designed to batch analyse raw data files output by [Zantiks](https://zantiks.com/) behavioural research equipment Y-maze protocol using zebrafish (*Danio rerio*). Please read the instructions below before use. If you use this script to analyse data that goes on to be published please [cite this work appropriately](### Please-cite-this-paper-if-you-use-this-work).
+This is an R script designed to batch analyse raw data files output by [Zantiks](https://zantiks.com/) behavioural research equipment Y-maze protocol using zebrafish (*Danio rerio*). Please read the instructions below before use. If you use this script to analyse data that goes on to be published please [cite this work appropriately](README.md#section).
 
 <p align="center">
 <img src="https://github.com/thejamesclay/ZANTIKS_YMaze_Analysis_Script/blob/master/Y_zones.png">
@@ -38,6 +38,6 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 * Data must be in .csv format
 * Fish IDs can only contain numbers
 
-## Please cite this paper if you use this script
+# section
 Fontana, B. D., Cleal, M., Clay, J. M., & Parker, M. O. (2019). Zebrafish (Danio rerio) behavioral laterality predicts increased short-term avoidance memory but not stress-reactivity responses. Animal Cognition. https://doi.org/10.1007/s10071-019-01296-9
 
