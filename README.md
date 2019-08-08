@@ -39,5 +39,5 @@ This is an R script designed to batch analyse raw data files output by [Zantiks]
 * Fish IDs can only contain numbers
 
 ### Reference
-Fontana, B. D., Cleal, M., Clay, J. M., & Parker, M. O. (2019). Zebrafish (**Danio rerio**) behavioral laterality predicts increased short-term avoidance memory but not stress-reactivity responses. Animal Cognition. https://doi.org/10.1007/s10071-019-01296-9
+Fontana, B. D., Cleal, M., Clay, J. M., & Parker, M. O. (2019). Zebrafish (*Danio rerio*) behavioral laterality predicts increased short-term avoidance memory but not stress-reactivity responses. Animal Cognition. https://doi.org/10.1007/s10071-019-01296-9
 
