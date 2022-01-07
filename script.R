@@ -3,8 +3,8 @@
 # Set input and output to the correct paths in the "YMazeAnalysisScript" directory
 library(tidyverse)
 library(lubridate)
-input = "~/Coding Projects/ZANTIKS_YMaze_Analysis_Script/data"
-output = "~/Coding Projects/ZANTIKS_YMaze_Analysis_Script/output"
+input = "D:/Documents/development/ZANTIKS_YMaze_Analysis_Script/data"
+output = "D:/Documents/development/ZANTIKS_YMaze_Analysis_Script/output"
 
 # IMPORT DATA -------------------------------------------------------------
 setwd(input)
@@ -24,13 +24,14 @@ df[[2]] <- df[[2]] %>% map(~ mutate(.x, X4 = as.character(X4))) # ensure that "X
 
 df <- #convert df from a tibble w/ nested lists to a basic tibble
   df %>% 
-  unnest(head) %>% 
-  unnest(tail)
+  unnest_legacy(head) %>% 
+  unnest_legacy(tail)
 
 # DATA WANGLING -----------------------------------------------------------
 ## STEP 1 - select variables that we are intrested in
 df<-
   df %>% 
+  rename(X11 = "X1...8") %>% 
   select(file_list, Apparatus, `Unit ID`,X11, X4, X5, X6, fish1, fish2) %>% #select the vars we're intrested in
   rename(file_id = file_list, #renames vars
          apparatus = Apparatus,
@@ -52,8 +53,8 @@ df <-
 df <- 
   df %>% 
   mutate(fish_id = ifelse(arena == 1, fish1,
-                   ifelse(arena == 2, fish2,
-                          NA))) %>% 
+                          ifelse(arena == 2, fish2,
+                                 NA))) %>% 
   select(file_id, apparatus, unit_id, time, arena, fish_id, enter_zone, exit_zone)
 
 ## STEP 4 - export for backup/later use
@@ -68,18 +69,18 @@ df_a <-
   df_a %>% 
   mutate(elapsed_secs = seconds(df_a$time)) %>%  #create an elapse_seconds column to bin from
   mutate(bin = ifelse(elapsed_secs >0 & elapsed_secs <600, 1,     #bin1
-               ifelse(elapsed_secs >600 & elapsed_secs <1200, 2,  #bin2
-               ifelse(elapsed_secs >1200 & elapsed_secs <1800, 3, #bin3
-               ifelse(elapsed_secs >1800 & elapsed_secs <2400, 4, #bin4
-               ifelse(elapsed_secs >2400 & elapsed_secs <3000, 5, #bin5
-               ifelse(elapsed_secs >3000 & elapsed_secs <6000, 6, #bin6
-                      NA)))))))                                   #NA
+                      ifelse(elapsed_secs >600 & elapsed_secs <1200, 2,  #bin2
+                             ifelse(elapsed_secs >1200 & elapsed_secs <1800, 3, #bin3
+                                    ifelse(elapsed_secs >1800 & elapsed_secs <2400, 4, #bin4
+                                           ifelse(elapsed_secs >2400 & elapsed_secs <3000, 5, #bin5
+                                                  ifelse(elapsed_secs >3000 & elapsed_secs <6000, 6, #bin6
+                                                         NA)))))))                                   #NA
 
 ## STEP 2 - Prepare data ready to figure out which way the fish turned
 df_a$time <- as.numeric(df_a$time) #time variables are not compatible with ddplr
 df_a$elapsed_secs <- as.numeric(df_a$elapsed_secs)
 df_a <- df_a %>% arrange(file_id,fish_id,elapsed_secs, exit_zone)  # order by fish_id and tie break by elepsed_secs
-                                                                   # and then exit_zone so line 1 = enter, line 2 = exit
+# and then exit_zone so line 1 = enter, line 2 = exit
 #Create new variables ready to make new data tibble
 df_a <- df_a %>% 
   mutate(zone = ifelse(enter_zone == lead(exit_zone), enter_zone, 999)) %>% 
@@ -175,3 +176,4 @@ final_data <- tet_wide %>%
 ## STEP 7 - Final Output
 setwd(output)
 write.csv(final_data, "final_output.csv")
+
